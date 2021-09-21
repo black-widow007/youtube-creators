@@ -416,6 +416,7 @@ body {
         -ms-flex: auto;
             flex: auto;
 }
+<<<<<<< HEAD
 
 /* Media Queries */
 @media screen and (max-width: 1300px), screen and (max-height: 800px) {
@@ -438,3 +439,5 @@ body {
         grid-column: 1 / span 2;
     }
 }
+=======
+>>>>>>> 0076c5a023768ff0c835920d4f4789a76d9e041c
