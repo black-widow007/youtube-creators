@@ -1,0 +1,418 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+@font-face {
+    font-family: paperdaisy;
+    src: url(/fonts/paperdaisy-demo.ttf);
+}
+
+:root {
+    font-size: 16px;
+    --dark001: #1a1b1c;
+    --light001: #fafcfe;
+    --red001: #ff5757;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--light001);
+    height: 100%;
+}
+
+/* Hamburger Button */
+.hamburger {
+    position: absolute;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: var(--dark001);
+    border: none;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+}
+
+.hamburger:focus,
+.hamburger:active {
+    outline: 5px solid var(--red001);
+}
+
+.hamburger::after, 
+.hamburger::before {
+    content: "";
+    height: 20px;
+    border-left: 1px solid var(--light001);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    margin: -3px;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.hamburger--active::after {
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+}
+
+.hamburger--active::before {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.main-nav {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+    width: 40%;
+    background-color: var(--dark001);
+    /* makes menu invisble by default */
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    z-index: 5;
+}
+
+.main-nav a {
+    font-family: Comfortaa, sans-serif;
+    font-size: 3rem;
+    padding: 12px 0;
+    margin: 16px;
+    color: var(--light001);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: border-bottom 0.3s ease;
+    -o-transition: border-bottom 0.3s ease;
+    transition: border-bottom 0.3s ease;
+}
+
+.main-nav a:hover {
+    border-bottom: 1px solid var(--red001);
+}
+
+.main-nav a:focus, 
+.main-nav a:active {
+    outline: 5px solid var(--red001);
+}
+.main-nav--active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.home {
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* grid col start on line 1 end on line 2 */
+.home-info {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 16px;
+}
+
+.home-header {
+    max-width: 356px;
+    margin: 82px 0 16px 0;
+}
+
+.home-title {
+    font-family: paperdaisy, sans-serif;
+    font-size: 6.25rem;
+    color: var(--dark001);
+    line-height: 105%;
+    margin-bottom: 56px;
+}
+
+/* line spacer */
+.home-spacer {
+    display: inline-block;
+    height: 1px;
+    width: 102px;
+    background-color: var(--dark001);
+    margin-bottom: 48px;
+}
+
+.home-subtext {
+    font-family: Comfortaa, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--dark001);
+    line-height: 165%;
+    margin-bottom: 48px;
+}
+
+.home-cta {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Comfortaa, sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    background-color: var(--dark001);
+    color: var(--light001);
+    border: 2px solid var(--dark001);
+    border-radius: 50px;
+    padding: 16px 48px;
+    -webkit-transition-property: background-color, color;
+    -o-transition-property: background-color, color;
+    transition-property: background-color, color;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+         -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+}
+
+.home-cta:hover {
+    background-color: var(--light001);
+    color: var(--dark001);
+}
+
+.home-cta:focus, 
+.home-cta:active {
+    background-color: var(--light001);
+    color: var(--dark001);
+    outline: 5px solid var(--red001);
+}
+
+.home-cards {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+}
+
+.group-one {
+    -ms-grid-columns: 1 / span 1;
+    grid-template-columns: 1 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+/* Add linear gradient before the img url*/
+.group-one .home-card--square {
+    background-image: -webkit-gradient(
+        linear,
+        left top, left bottom,
+        color-stop(50%, rgba(26, 27, 28, 0)),
+        color-stop(74.85%, rgba(26, 27, 28, 0.2)),
+        to(rgba(26, 27, 28, 0.4))
+    ), 
+    url(./images/isi2.jpg);
+    background-image: -o-linear-gradient(
+        top,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.2) 74.85%,
+        rgba(26, 27, 28, 0.4) 100%
+    ), 
+    url(./images/isi2.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.2) 74.85%,
+        rgba(26, 27, 28, 0.4) 100%
+    ), 
+    url(./images/isi2.jpg);
+}
+
+.group-one .home-card--large {
+    background-image: -webkit-gradient(
+        linear,
+        left top, left bottom,
+        color-stop(50%, rgba(26, 27, 28, 0)),
+        color-stop(74.85%, rgba(26, 27, 28, 0.2)),
+        to(rgba(26, 27, 28, 0.4))
+    ),  
+    url(./images/shaneice.jpg);
+    background-image: -o-linear-gradient(
+        top,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.2) 74.85%,
+        rgba(26, 27, 28, 0.4) 100%
+    ),  
+    url(./images/shaneice.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.2) 74.85%,
+        rgba(26, 27, 28, 0.4) 100%
+    ),  
+    url(./images/shaneice.jpg);
+}
+
+.group-two {
+    -ms-grid-columns: 2 / span 1;
+    grid-template-columns: 2 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.group-two .home-card--square {
+    background-image: -webkit-gradient(
+        linear,
+        left top, left bottom,
+        color-stop(50%, rgba(26, 27, 28, 0)),
+        color-stop(74.85%, rgba(26, 27, 28, 0.5)),
+        to(rgba(26, 27, 28, 0.9))
+    ), 
+    url(./images/kimberly.jpg);
+    background-image: -o-linear-gradient(
+        top,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.5) 74.85%,
+        rgba(26, 27, 28, 0.9) 100%
+    ), 
+    url(./images/kimberly.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.5) 74.85%,
+        rgba(26, 27, 28, 0.9) 100%
+    ), 
+    url(./images/kimberly.jpg);
+}
+
+.group-two .home-card--large {
+    background-image: -webkit-gradient(
+        linear,
+        left top, left bottom,
+        color-stop(50%, rgba(26, 27, 28, 0)),
+        color-stop(74.85%, rgba(26, 27, 28, 0.5)),
+        to(rgba(26, 27, 28, 0.9))
+    ), 
+    url(./images/naturalreign.jpg);
+    background-image: -o-linear-gradient(
+        top,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.5) 74.85%,
+        rgba(26, 27, 28, 0.9) 100%
+    ), 
+    url(./images/naturalreign.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(26, 27, 28, 0) 50%,
+        rgba(26, 27, 28, 0.5) 74.85%,
+        rgba(26, 27, 28, 0.9) 100%
+    ), 
+    url(./images/naturalreign.jpg);
+}
+
+.home-card {
+    margin: 8px;
+    padding: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background-color: var(--dark001);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-card header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.home-card h3 a {
+    font-family: Comfortaa, sans-serif;
+    font-size: 1rem;
+    color: var(--light001);
+    text-decoration: none;
+}
+
+/* Perfect Square the images */
+.home-card--square {
+    height: 0;
+    padding-top: calc(100% - 32px);
+}
+
+/* Make the large images fill 100% space */
+.home-card--large {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+}
