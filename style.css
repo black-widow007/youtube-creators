@@ -416,10 +416,9 @@ body {
         -ms-flex: auto;
             flex: auto;
 }
-<<<<<<< HEAD
 
 /* Media Queries */
-@media screen and (max-width: 1300px), screen and (max-height: 800px) {
+@media(max-width: 768px) {
     .main-nav {
         width: 100%;
     }
@@ -434,10 +433,8 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media(max-width: 500px) {
     .group-one, .group-two {
         grid-column: 1 / span 2;
     }
 }
-=======
->>>>>>> 0076c5a023768ff0c835920d4f4789a76d9e041c
